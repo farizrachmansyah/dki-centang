@@ -18,6 +18,10 @@ a {
   text-decoration: none;
 }
 
+.main {
+  background-color: $primary-color;
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;
