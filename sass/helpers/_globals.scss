@@ -18,6 +18,15 @@ a {
   text-decoration: none;
 }
 
+.btn {
+  padding: 8px 15px;
+  background-color: $secondary-color;
+  color: $primary-color;
+  text-transform: uppercase;
+  font-family: $ff-primary;
+  cursor: pointer;
+}
+
 .main {
   background-color: $primary-color;
 }
