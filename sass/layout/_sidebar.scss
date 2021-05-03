@@ -1,11 +1,13 @@
 .sidebar {
   background-color: $light-color;
-  display: grid;
-  grid-template-rows: repeat(1fr, 2);
   padding: 1rem;
   margin-right: 1rem;
   text-transform: uppercase;
   text-align: center;
   color: $primary-color;
   font-weight: weight(bold);
+
+  @include breakpoint-up(tablet) {
+    display: grid;
+  }
 }

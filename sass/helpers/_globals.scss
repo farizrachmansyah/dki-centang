@@ -19,10 +19,12 @@ a {
 }
 
 .btn {
-  padding: 8px 15px;
+  width: 100%;
+  padding: 8px 0;
   background-color: $secondary-color;
   color: $primary-color;
   text-transform: uppercase;
+  text-align: center;
   font-family: $ff-primary;
   cursor: pointer;
 }
@@ -32,11 +34,15 @@ a {
 }
 
 .container {
-  max-width: 1170px;
+  // max-width: 1170px;
   margin: 0 auto;
 
   &--p {
-    padding: 2rem;
+    padding: 1rem;
+
+    @include breakpoint-up(tablet) {
+      padding: 2rem;
+    }
   }
   &--px {
     padding: 0 2rem;
@@ -57,5 +63,17 @@ a {
   }
   &-jc-sb {
     justify-content: space-between;
+  }
+}
+
+// hidding elements
+.hide-for-mobile {
+  @include breakpoint-down(phone) {
+    display: none;
+  }
+}
+.hide-for-desktop {
+  @include breakpoint-up(smDesktop) {
+    display: none;
   }
 }

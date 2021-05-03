@@ -1,7 +1,111 @@
 .content {
+  width: 100%;
+
   &__top {
+    text-align: center;
+    margin-bottom: 2rem;
+
     .logo {
-      width: 300px;
+      width: 200px;
+    }
+
+    .slogan {
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+  }
+
+  &__bottom {
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-gap: 1rem;
+
+      .item {
+        height: 175px;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to bottom, transparent 20%, #000 80%);
+        }
+
+        &.ambulance {
+          background: url("../../dist/assets/Ambulance.jpeg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &.satpolpp {
+          background: url("../../dist/assets/Satpol\ PP.jpeg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &.kepolisian {
+          background: url("../../dist/assets/Kepolisian.jpeg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &.pemadam {
+          background: url("../../dist/assets/Pemadam\ Kebakaran.jpeg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &.bpjs {
+          background: url("../../dist/assets/BPJS.jpeg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &.timsar {
+          background: url("../../dist/assets/Badan\ SAR.jpeg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &.pajak {
+          background: url("../../dist/assets/Direktorat\ Jenderal\ Pajak.jpeg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &.konsultan {
+          background: url("../../dist/assets/Konsultan\ Hukum.jpeg");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        &__desc {
+          width: 100%;
+          position: relative;
+          z-index: 1;
+          padding: 0.5rem;
+
+          .title {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: $primary-color;
+            text-transform: uppercase;
+          }
+
+          .button {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: weight(bold);
+          }
+        }
+      }
     }
   }
 }
