@@ -66,9 +66,32 @@ a {
   }
 }
 
+// overlay
+.overlay {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: -1;
+  width: 83%;
+  height: 100vh;
+  background-color: $light-color;
+  display: grid;
+  padding: 67px 1rem 0 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: $primary-color;
+  font-size: 1rem;
+  transition: all 0.3 ease-in-out;
+}
+
 // hidding elements
 .hide-for-mobile {
   @include breakpoint-down(phone) {
+    display: none;
+  }
+}
+.hide-for-tablet {
+  @include breakpoint-up(tablet) {
     display: none;
   }
 }

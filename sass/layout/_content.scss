@@ -1,5 +1,6 @@
 .content {
   width: 100%;
+  margin-top: 67px;
 
   &__top {
     text-align: center;
@@ -10,6 +11,7 @@
     }
 
     .slogan {
+      color: $accent-color;
       font-size: 1rem;
       text-transform: capitalize;
     }

@@ -10,8 +10,38 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
   </head>
   <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header__mobile hide-for-tablet">
+        <div class="container container--p flex flex-jc-sb flex-ai-c">
+          <div class="header__mobile-statistics">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="header__mobile-burger flex">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+          </div>
+        </div>
+
+        <div class="overlay">
+          <div class="diterima">jumlah kasus diterima</div>
+          <div class="diselesaikan">jumlah kasus diselesaikan</div>
+        </div>
+      </div>
+      <div class="header__desktop hide-for-mobile"></div>
+    </header>
+
     <!-- MAIN -->
     <main class="main">
       <div class="container container--p flex">
