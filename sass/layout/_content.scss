@@ -139,17 +139,32 @@
           z-index: 1;
           padding: 0.5rem;
 
-          .title {
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-            color: $primary-color;
-            text-transform: capitalize;
-          }
-
           .button {
             display: inline-block;
+            position: relative;
+            background: none;
+            border: 1px solid $secondary-color;
             font-size: 0.75rem;
             font-weight: weight(bold);
+            color: $secondary-color;
+
+            &::before {
+              content: "hubungi";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0;
+              padding: 8px 0;
+              background-color: $secondary-color;
+              color: #000;
+              transition: all 0.3s ease;
+            }
+
+            &:hover {
+              &::before {
+                width: 100%;
+              }
+            }
           }
         }
       }
