@@ -18,6 +18,10 @@ a {
   text-decoration: none;
 }
 
+ul li {
+  list-style: none;
+}
+
 .btn {
   width: 100%;
   padding: 8px 0;
@@ -64,24 +68,6 @@ a {
   &-jc-sb {
     justify-content: space-between;
   }
-}
-
-// overlay
-.overlay {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  z-index: -1;
-  width: 83%;
-  height: 100vh;
-  background-color: $light-color;
-  display: grid;
-  padding: 67px 1rem 0 1rem;
-  text-transform: uppercase;
-  text-align: center;
-  color: $primary-color;
-  font-size: 1rem;
-  transition: all 0.3 ease-in-out;
 }
 
 // hidding elements
