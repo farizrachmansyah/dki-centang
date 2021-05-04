@@ -24,7 +24,7 @@
       grid-gap: 1rem;
 
       .item {
-        height: 175px;
+        aspect-ratio: 16 / 9;
         position: relative;
         display: flex;
         align-items: flex-end;
