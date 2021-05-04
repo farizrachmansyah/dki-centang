@@ -1,8 +1,6 @@
 .main {
   @include breakpoint-up(tablet) {
     height: 100vh;
-    padding: 1rem;
-    padding-bottom: 0;
-    padding-right: 0;
+    padding: 0 0 0 1rem;
   }
 }

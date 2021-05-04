@@ -44,6 +44,9 @@
       @include breakpoint-up(smDesktop) {
         width: 300px;
       }
+      @include breakpoint-up(xlDesktop) {
+        width: 400px;
+      }
     }
 
     .slogan {
@@ -59,6 +62,12 @@
         max-width: 500px;
         margin: 0 auto;
       }
+
+      @include breakpoint-up(xlDesktop) {
+        font-size: 1.875rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
     }
   }
 
@@ -67,6 +76,10 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       grid-gap: 1rem;
+
+      @include breakpoint-up(xlDesktop) {
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      }
 
       .item {
         aspect-ratio: 16 / 9;
@@ -139,6 +152,13 @@
           z-index: 1;
           padding: 0.5rem;
 
+          @include breakpoint-up(lgDesktop) {
+            padding: 0.75rem;
+          }
+          @include breakpoint-up(xlDesktop) {
+            padding: 1rem;
+          }
+
           .button {
             display: inline-block;
             position: relative;
@@ -147,6 +167,11 @@
             font-size: 0.75rem;
             font-weight: weight(bold);
             color: $secondary-color;
+
+            @include breakpoint-up(xlDesktop) {
+              font-size: 1.25rem;
+              border-width: 3px;
+            }
 
             &::before {
               content: "hubungi";
@@ -158,6 +183,10 @@
               background-color: $secondary-color;
               color: #000;
               transition: all 0.3s ease;
+
+              @include breakpoint-up(xlDesktop) {
+                font-size: 1.25rem;
+              }
             }
 
             &:hover {
