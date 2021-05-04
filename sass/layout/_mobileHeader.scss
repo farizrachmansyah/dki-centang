@@ -4,6 +4,14 @@
   width: 100%;
   font-size: 1.5rem;
 
+  &-statistics {
+    transition: all 0.3s ease-in-out;
+
+    &.open {
+      color: $primary-color;
+    }
+  }
+
   &-burger {
     flex-direction: column;
 
@@ -12,9 +20,28 @@
       width: 20px;
       height: 3px;
       background-color: #000;
+      transition: all 0.3s ease-in-out;
 
       &:not(:last-child) {
         margin-bottom: 3px;
+      }
+    }
+
+    &.open {
+      .line {
+        background-color: $primary-color;
+      }
+
+      .line1 {
+        transform: rotateZ(45deg);
+      }
+
+      .line2 {
+        opacity: 0;
+      }
+
+      .line3 {
+        transform: rotateZ(-45deg);
       }
     }
   }
@@ -64,8 +91,6 @@
 
       &.open {
         right: 0;
-
-        
       }
     }
   }

@@ -13,9 +13,11 @@ class EventListener {
     theBtn.addEventListener('click', () => {
       if (!overlayStat.classList.contains('open')) {
         overlayStat.classList.add('open');
+        theBtn.classList.add('open');
         theBody.style.overflowY = 'hidden';
       } else {
         overlayStat.classList.remove('open');
+        theBtn.classList.remove('open');
         theBody.style.overflowY = 'auto';
       }
     });
@@ -29,9 +31,11 @@ class EventListener {
     theBtn.addEventListener('click', () => {
       if (!overlayMenu.classList.contains('open')) {
         overlayMenu.classList.add('open');
+        theBtn.classList.add('open');
         theBody.style.overflowY = 'hidden';
       } else {
         overlayMenu.classList.remove('open');
+        theBtn.classList.remove('open');
         theBody.style.overflowY = 'auto';
       }
     });
