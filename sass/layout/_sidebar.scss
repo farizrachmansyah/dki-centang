@@ -1,13 +1,20 @@
 .sidebar {
+  width: 30%;
+  margin-bottom: 1rem;
+  border-radius: 20px;
   background-color: $accent-color;
-  padding: 1rem;
-  margin-right: 1rem;
-  text-transform: uppercase;
-  text-align: center;
-  color: $primary-color;
-  font-weight: weight(bold);
 
-  @include breakpoint-up(tablet) {
+  color: $primary-color;
+
+  &__content {
     display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    height: 100%;
+    padding: 1rem;
+    text-transform: uppercase;
+
+    @include breakpoint-up(smDesktop) {
+      font-size: 1.125rem;
+    }
   }
 }

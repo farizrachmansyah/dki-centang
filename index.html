@@ -22,7 +22,9 @@
   <body>
     <!-- HEADER -->
     <header class="header">
-      <div class="header__mobile hide-for-tablet">
+      <!-- Header for Mobile View -->
+      <div class="header__mobile hide-for-tabletUp">
+        <!-- The Buttons Component -->
         <div class="container container--p flex flex-jc-sb flex-ai-c">
           <div class="header__mobile-statistics btn-statistics">
             <i class="fas fa-chart-line"></i>
@@ -34,11 +36,13 @@
           </div>
         </div>
 
+        <!-- The Statistics Content -->
         <div class="overlay overlay-statistics">
           <div class="diterima">jumlah kasus diterima</div>
           <div class="diselesaikan">jumlah kasus diselesaikan</div>
         </div>
 
+        <!-- The Menu Content -->
         <div class="overlay overlay-menu">
           <ul>
             <li><a href="#">cek status laporan</a></li>
@@ -57,85 +61,87 @@
           </ul>
         </div>
       </div>
+
+      <!-- Header for Desktop View -->
       <div class="header__desktop hide-for-mobile"></div>
     </header>
 
     <!-- MAIN -->
-    <main class="main">
-      <div class="container container--p flex">
-        <!-- Sidebar -->
-        <section class="sidebar hide-for-mobile">
-          <div class="sidebar__diterima">
-            <p class="title">jumlah kasus diterima</p>
+    <main class="main container--p flex">
+      <!-- Sidebar -->
+      <section class="sidebar hide-for-tabletDown">
+        <div class="sidebar__content">
+          <div class="sidebar__content-diterima">
+            <p>jumlah kasus diterima</p>
           </div>
-          <div class="sidebar__diselesaikan">
-            <p class="title">jumlah kasus diselesaikan</p>
+          <div class="sidebar__content-diselesaikan">
+            <p>jumlah kasus diselesaikan</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Content -->
-        <section class="content">
-          <!-- Top Side -->
-          <div class="content__top">
-            <img src="./dist/assets/Logo DKI CENTANG.PNG" alt="logo" class="logo" />
-            <h2 class="slogan">layanan tepat dan cepat untuk pengaduan masyarakat</h2>
-          </div>
+      <!-- Content -->
+      <section class="content container--py">
+        <!-- Top Side -->
+        <div class="content__top">
+          <img src="./dist/assets/Logo DKI CENTANG.PNG" alt="logo" class="logo" />
+          <h2 class="slogan">layanan tepat dan cepat untuk pengaduan masyarakat</h2>
+        </div>
 
-          <!-- Bottom Side -->
-          <div class="content__bottom">
-            <div class="content__bottom__grid">
-              <div class="item ambulance">
-                <div class="item__desc">
-                  <h1 class="title">Ambulance</h1>
-                  <a href="#" class="button btn">hubungi</a>
-                </div>
+        <!-- Bottom Side -->
+        <div class="content__bottom">
+          <div class="content__bottom__grid">
+            <div class="item ambulance">
+              <div class="item__desc">
+                <h1 class="title">Ambulance</h1>
+                <a href="#" class="button btn">hubungi</a>
               </div>
-              <div class="item satpolpp">
-                <div class="item__desc">
-                  <h1 class="title">Satpol PP</h1>
-                  <a href="#" class="button btn">hubungi</a>
-                </div>
+            </div>
+            <div class="item satpolpp">
+              <div class="item__desc">
+                <h1 class="title">Satpol PP</h1>
+                <a href="#" class="button btn">hubungi</a>
               </div>
-              <div class="item kepolisian">
-                <div class="item__desc">
-                  <h1 class="title">Kepolisian</h1>
-                  <a href="#" class="button btn">hubungi</a>
-                </div>
+            </div>
+            <div class="item kepolisian">
+              <div class="item__desc">
+                <h1 class="title">Kepolisian</h1>
+                <a href="#" class="button btn">hubungi</a>
               </div>
-              <div class="item pemadam">
-                <div class="item__desc">
-                  <h1 class="title">Pemadam Kebakaran</h1>
-                  <a href="#" class="button btn">hubungi</a>
-                </div>
+            </div>
+            <div class="item pemadam">
+              <div class="item__desc">
+                <h1 class="title">Pemadam Kebakaran</h1>
+                <a href="#" class="button btn">hubungi</a>
               </div>
-              <div class="item bpjs">
-                <div class="item__desc">
-                  <h1 class="title">BPJS</h1>
-                  <a href="#" class="button btn">hubungi</a>
-                </div>
+            </div>
+            <div class="item bpjs">
+              <div class="item__desc">
+                <h1 class="title">BPJS</h1>
+                <a href="#" class="button btn">hubungi</a>
               </div>
-              <div class="item timsar">
-                <div class="item__desc">
-                  <h1 class="title">Badan SAR</h1>
-                  <a href="#" class="button btn">hubungi</a>
-                </div>
+            </div>
+            <div class="item timsar">
+              <div class="item__desc">
+                <h1 class="title">Badan SAR</h1>
+                <a href="#" class="button btn">hubungi</a>
               </div>
-              <div class="item pajak">
-                <div class="item__desc">
-                  <h1 class="title">Dirjen Pajak</h1>
-                  <a href="#" class="button btn">hubungi</a>
-                </div>
+            </div>
+            <div class="item pajak">
+              <div class="item__desc">
+                <h1 class="title">Dirjen Pajak</h1>
+                <a href="#" class="button btn">hubungi</a>
               </div>
-              <div class="item konsultan">
-                <div class="item__desc">
-                  <h1 class="title">Konsultan Hukum</h1>
-                  <a href="#" class="button btn">hubungi</a>
-                </div>
+            </div>
+            <div class="item konsultan">
+              <div class="item__desc">
+                <h1 class="title">Konsultan Hukum</h1>
+                <a href="#" class="button btn">hubungi</a>
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
     <script src="./dist/js/main.js"></script>
   </body>

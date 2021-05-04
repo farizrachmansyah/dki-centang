@@ -12,6 +12,10 @@ html {
 
 body {
   font-family: $ff-primary;
+
+  @include breakpoint-up(tablet) {
+    overflow: hidden;
+  }
 }
 
 a {
@@ -76,7 +80,12 @@ ul li {
     display: none;
   }
 }
-.hide-for-tablet {
+.hide-for-tabletDown {
+  @include breakpoint-down(tablet) {
+    display: none;
+  }
+}
+.hide-for-tabletUp {
   @include breakpoint-up(tablet) {
     display: none;
   }
