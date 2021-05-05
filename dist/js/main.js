@@ -51,7 +51,9 @@ class EventListener {
 
       button.addEventListener('mouseover', () => {
         theFuncBtn.style.width = '100%';
-        theFuncBtn.style.pointerEvents = 'all';
+        setTimeout(() => {
+          theFuncBtn.style.pointerEvents = 'all';
+        }, 500);
       });
       button.addEventListener('mouseout', () => {
         theFuncBtn.style.width = '0';
