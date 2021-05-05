@@ -177,12 +177,13 @@
               border: none;
               position: absolute;
               top: 0;
-              left: 0;
-              width: 0;
+              left: -100%;
+              width: 100%;
+              opacity: 0;
+              pointer-events: none;
               background-color: $secondary-color;
               color: #000;
               transition: all 0.3s ease;
-              pointer-events: none;
             }
           }
         }

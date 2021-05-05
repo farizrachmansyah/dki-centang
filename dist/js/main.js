@@ -50,11 +50,13 @@ class EventListener {
       const theFuncBtn = button.firstElementChild;
 
       button.addEventListener('mouseover', () => {
-        theFuncBtn.style.width = '100%';
+        theFuncBtn.style.left = '0';
+        theFuncBtn.style.opacity = '1';
         theFuncBtn.style.pointerEvents = 'all';
       });
       button.addEventListener('mouseout', () => {
-        theFuncBtn.style.width = '0';
+        theFuncBtn.style.left = '-100%';
+        theFuncBtn.style.opacity = '0';
         theFuncBtn.style.pointerEvents = 'none';
       });
     });
