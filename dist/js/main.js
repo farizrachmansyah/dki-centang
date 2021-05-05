@@ -3,6 +3,7 @@ class EventListener {
     this.body = document.querySelector('body');
     this.statisticsBtn = document.querySelector('.btn-statistics');
     this.menuBtn = document.querySelector('.btn-menu');
+    this.menuBtnDesktop = document.querySelector('.btn-menuDesktop');
     this.hubungiBtn = document.querySelectorAll('.btn-hubungi');
   }
 
@@ -27,7 +28,9 @@ class EventListener {
   openMenu() {
     const theBody = this.body;
     const theBtn = this.menuBtn;
+    const theDesktopBtn = this.menuBtnDesktop;
     const overlayMenu = document.querySelector('.overlay-menu');
+    const overlayDesktopMenu = document.querySelector('.overlay-menuDesktop');
 
     theBtn.addEventListener('click', () => {
       if (!overlayMenu.classList.contains('open')) {
@@ -37,6 +40,18 @@ class EventListener {
       } else {
         overlayMenu.classList.remove('open');
         theBtn.classList.remove('open');
+        theBody.style.overflowY = 'auto';
+      }
+    });
+
+    theDesktopBtn.addEventListener('click', () => {
+      if (!overlayDesktopMenu.classList.contains('open')) {
+        overlayDesktopMenu.classList.add('open');
+        theDesktopBtn.classList.add('open');
+        theBody.style.overflowY = 'hidden';
+      } else {
+        overlayDesktopMenu.classList.remove('open');
+        theDesktopBtn.classList.remove('open');
         theBody.style.overflowY = 'auto';
       }
     });

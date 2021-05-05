@@ -1,0 +1,84 @@
+.header__desktop {
+  position: relative;
+  z-index: 2;
+
+  &-burger {
+    position: absolute;
+    z-index: 1;
+    top: 2rem;
+    right: 2rem;
+    flex-direction: column;
+    padding: 0.5rem;
+
+    .line {
+      display: inline-block;
+      width: 25px;
+      height: 4px;
+      background-color: #000;
+      transition: all 0.3s ease-in-out;
+
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
+
+    &:hover {
+      outline: 2px solid gray;
+    }
+
+    &.open {
+      .line {
+        background-color: $primary-color;
+      }
+
+      .line1 {
+        transform: rotateZ(45deg);
+      }
+
+      .line2 {
+        opacity: 0;
+      }
+
+      .line3 {
+        transform: rotateZ(-45deg);
+      }
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 40%;
+    height: 100vh;
+    padding: 5rem 1rem 0 1rem;
+    color: $primary-color;
+    font-size: 1rem;
+    background-color: #000;
+    filter: opacity(0.8);
+    text-align: unset;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out;
+
+    @include breakpoint-up(mdDesktop) {
+      width: 25%;
+    }
+
+    a {
+      color: $primary-color;
+      line-height: 1.4;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    #ceklayanan-list {
+      padding-left: 2rem;
+    }
+
+    &.open {
+      right: 0;
+    }
+  }
+}
