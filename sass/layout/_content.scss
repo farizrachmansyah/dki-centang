@@ -173,26 +173,15 @@
               border-width: 3px;
             }
 
-            &::before {
-              content: "hubungi";
+            &.func {
+              border: none;
               position: absolute;
-              bottom: 0;
+              top: 0;
               left: 0;
               width: 0;
-              padding: 8px 0;
               background-color: $secondary-color;
               color: #000;
               transition: all 0.3s ease;
-
-              @include breakpoint-up(xlDesktop) {
-                font-size: 1.25rem;
-              }
-            }
-
-            &:hover {
-              &::before {
-                width: 100%;
-              }
             }
           }
         }

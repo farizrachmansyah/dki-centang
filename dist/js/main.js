@@ -3,6 +3,7 @@ class EventListener {
     this.body = document.querySelector('body');
     this.statisticsBtn = document.querySelector('.btn-statistics');
     this.menuBtn = document.querySelector('.btn-menu');
+    this.hubungiBtn = document.querySelectorAll('.btn-hubungi');
   }
 
   openStatistics() {
@@ -40,6 +41,22 @@ class EventListener {
       }
     });
   }
+
+  hubungiButton() {
+    const theBtn = this.hubungiBtn;
+    console.log(theBtn);
+
+    theBtn.forEach(button => {
+      const theFuncBtn = button.firstElementChild;
+
+      button.addEventListener('mouseover', () => {
+        theFuncBtn.style.width = '100%';
+      });
+      button.addEventListener('mouseout', () => {
+        theFuncBtn.style.width = '0';
+      });
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -47,4 +64,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   events.openStatistics();
   events.openMenu();
+  events.hubungiButton();
 })
