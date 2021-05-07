@@ -74,6 +74,44 @@ class EventListener {
         theFuncBtn.style.opacity = '0';
         theFuncBtn.style.top = '-100%';
       });
+
+      theFuncBtn.addEventListener('click', () => {
+        Swal.mixin({
+          confirmButtonText: 'Next &rarr;',
+          showCancelButton: true,
+          title: 'Data Diri'
+        }).queue([
+          {
+            input: 'text',
+            inputPlaceholder: 'Nama Lengkap',
+          },
+          {
+            input: 'text',
+            inputPlaceholder: 'NIK',
+          },
+          {
+            input: 'tel',
+            inputPlaceholder: 'Nomor Telepon',
+          },
+          {
+            input: 'email',
+            inputPlaceholder: 'Email Address',
+          },
+          {
+            input: 'textarea',
+            inputPlaceholder: 'Alamat',
+          },
+        ]).then((result) => {
+          if (result.value) {
+            const answers = JSON.stringify(result.value)
+            Swal.fire({
+              icon: 'success',
+              title: 'All done!',
+              confirmButtonText: 'Lovely!'
+            });
+          }
+        });
+      })
     });
   }
 }
