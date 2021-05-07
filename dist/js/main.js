@@ -79,19 +79,31 @@ class EventListener {
         Swal.mixin({
           confirmButtonText: 'Next &rarr;',
           showCancelButton: true,
-          title: 'Data Diri'
+          title: 'Data Diri',
         }).queue([
           {
             input: 'text',
             inputPlaceholder: 'Nama Lengkap',
+            inputAttributes: {
+              required: true
+            },
+            validationMessage: 'This field is required'
           },
           {
             input: 'text',
             inputPlaceholder: 'NIK',
+            inputAttributes: {
+              required: true
+            },
+            validationMessage: 'This field is required'
           },
           {
             input: 'tel',
             inputPlaceholder: 'Nomor Telepon',
+            inputAttributes: {
+              required: true
+            },
+            validationMessage: 'This field is required'
           },
           {
             input: 'email',
@@ -100,6 +112,10 @@ class EventListener {
           {
             input: 'textarea',
             inputPlaceholder: 'Alamat',
+            inputAttributes: {
+              required: true
+            },
+            validationMessage: 'This field is required'
           },
         ]).then((result) => {
           if (result.value) {
