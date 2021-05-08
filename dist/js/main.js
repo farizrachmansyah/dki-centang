@@ -129,10 +129,10 @@ class EventListener {
                 <div class="hubungi">
                   <p class="hubungi__text">Bagaimana anda ingin menghubungi petugas kami?</p>
                   <div class="hubungi__btn">
-                    <button class="hubungi-btn call" data-number=${theFuncBtn.dataset.telpon}>
+                    <button class="hubungi-btn call" data-telpon=${theFuncBtn.dataset.telpon}>
                       <i class="fas fa-phone-alt"></i>
                     </button>
-                    <button class="hubungi-btn chat" data-number=${theFuncBtn.dataset.telpon}>
+                    <button class="hubungi-btn chat" data-telpon=${theFuncBtn.dataset.telpon}>
                       <i class="fas fa-comments"></i>
                     </button>
                   </div>
