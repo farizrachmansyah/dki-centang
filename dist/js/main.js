@@ -126,10 +126,10 @@ class EventListener {
                 <div class="hubungi">
                   <p class="hubungi__text">Bagaimana anda ingin menghubungi petugas kami?</p>
                   <div class="hubungi__btn">
-                    <button class="hubungi-btn call" data-number=${theFuncBtn.dataset.number}>
+                    <button class="hubungi-btn call" data-number=${theFuncBtn.dataset.telpon}>
                       <i class="fas fa-phone-alt"></i>
                     </button>
-                    <button class="hubungi-btn chat" data-number=${theFuncBtn.dataset.number}>
+                    <button class="hubungi-btn chat" data-number=${theFuncBtn.dataset.telpon}>
                       <i class="fas fa-comments"></i>
                     </button>
                   </div>
@@ -155,33 +155,38 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('call')) {
     const hubungiCallBtn = e.target;
-    showOptions(hubungiCallBtn);
+    showCallOption(hubungiCallBtn);
   } else if (e.target.classList.contains('chat')) {
     const hubungiChatBtn = e.target;
-    showOptions(hubungiChatBtn);
+    showChatOption(hubungiChatBtn);
 
   }
 });
 
-function showOptions(el) {
-  if (el.classList.contains('call')) {
-    Swal.fire({
-      icon: 'question',
-      title: 'Telpon melalui..',
-      html: `
+function showCallOption(target) {
+  Swal.fire({
+    icon: 'question',
+    title: 'Telpon melalui..',
+    html: `
         <div class="telpon">
           <div class="telpon__btn">
-            <button class="telpon-btn provider">TELPON MELALUI PROVIDER</button>
-            <button class="telpon-btn wa">TELPON MELALUI WhatsApp</button>
+            <button class="telpon-btn provider">
+              <a href="tel:${target.dataset.telpon}">TELPON MELALUI PROVIDER</a>
+            </button>
+            <button class="telpon-btn wa">
+              <a href="">TELPON MELALUI WhatsApp</a>
+            </button>
           </div>
         </div>
       `,
-      showConfirmButton: false
-    })
-  } else if (el.classList.contains('chat')) {
-    Swal.fire({
-      icon: 'error',
-      title: 'Feature under maintenance'
-    })
-  }
+    showConfirmButton: false
+  })
+}
+
+function showChatOption(target) {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops..',
+    text: 'Sorry, this feature not available yet'
+  })
 }
