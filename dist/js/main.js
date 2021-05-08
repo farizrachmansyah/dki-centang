@@ -59,7 +59,6 @@ class EventListener {
 
   hubungiButton() {
     const theBtn = this.hubungiBtn;
-    console.log(theBtn);
 
     theBtn.forEach(button => {
       const theFuncBtn = button.firstElementChild;
@@ -119,11 +118,24 @@ class EventListener {
           },
         ]).then((result) => {
           if (result.value) {
-            const answers = JSON.stringify(result.value)
             Swal.fire({
-              icon: 'success',
-              title: 'All done!',
-              confirmButtonText: 'Lovely!'
+              icon: 'question',
+              title: 'Hubungi Petugas',
+              text: 'Bagaimana anda ingin menghubungi petugas kami?',
+              html: `
+                <div class="hubungi">
+                  <p class="hubungi__text">Bagaimana anda ingin menghubungi petugas kami?</p>
+                  <div class="hubungi__btn">
+                    <button class="hubungi-btn call" data-number=${theFuncBtn.dataset.number}>
+                      <i class="fas fa-phone-alt"></i>
+                    </button>
+                    <button class="hubungi-btn chat" data-number=${theFuncBtn.dataset.number}>
+                      <i class="fas fa-comments"></i>
+                    </button>
+                  </div>
+                </div>
+              `,
+              showConfirmButton: false
             });
           }
         });
@@ -139,3 +151,37 @@ document.addEventListener('DOMContentLoaded', () => {
   events.openMenu();
   events.hubungiButton();
 })
+
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('call')) {
+    const hubungiCallBtn = e.target;
+    showOptions(hubungiCallBtn);
+  } else if (e.target.classList.contains('chat')) {
+    const hubungiChatBtn = e.target;
+    showOptions(hubungiChatBtn);
+
+  }
+});
+
+function showOptions(el) {
+  if (el.classList.contains('call')) {
+    Swal.fire({
+      icon: 'question',
+      title: 'Telpon melalui..',
+      html: `
+        <div class="telpon">
+          <div class="telpon__btn">
+            <button class="telpon-btn provider">TELPON MELALUI PROVIDER</button>
+            <button class="telpon-btn wa">TELPON MELALUI WhatsApp</button>
+          </div>
+        </div>
+      `,
+      showConfirmButton: false
+    })
+  } else if (el.classList.contains('chat')) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Feature under maintenance'
+    })
+  }
+}
