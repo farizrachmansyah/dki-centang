@@ -135,6 +135,17 @@ button,
       &:hover {
         background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
       }
+
+      a {
+        color: $primary-color;
+      }
     }
   }
+}
+
+.sweetalert-red-btn {
+  background-color: $accent-color !important;
+}
+.sweetalert-orange-btn {
+  background-color: $secondary-color !important;
 }

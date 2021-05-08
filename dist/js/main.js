@@ -76,6 +76,9 @@ class EventListener {
 
       theFuncBtn.addEventListener('click', () => {
         Swal.mixin({
+          customClass: {
+            confirmButton: 'sweetalert-orange-btn'
+          },
           confirmButtonText: 'Next &rarr;',
           showCancelButton: true,
           title: 'Data Diri',
@@ -184,7 +187,12 @@ function showCallOption(target) {
 }
 
 function showChatOption(target) {
-  Swal.fire({
+  const showPopUp = Swal.mixin({
+    customClass: {
+      confirmButton: 'sweetalert-red-btn'
+    }
+  })
+  showPopUp.fire({
     icon: 'error',
     title: 'Oops..',
     text: 'Sorry, this feature not available yet'
