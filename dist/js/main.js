@@ -177,7 +177,7 @@ function showCallOption(target) {
               <a href="tel:${target.dataset.telpon}">TELPON MELALUI PROVIDER</a>
             </button>
             <button class="telpon-btn wa">
-              <a href="">TELPON MELALUI WhatsApp</a>
+              <div onclick="showMaintenence()">TELPON MELALUI WhatsApp</div>
             </button>
           </div>
         </div>
@@ -187,6 +187,10 @@ function showCallOption(target) {
 }
 
 function showChatOption(target) {
+  showMaintenence();
+}
+
+function showMaintenence() {
   const showPopUp = Swal.mixin({
     customClass: {
       confirmButton: 'sweetalert-red-btn'
