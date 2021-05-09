@@ -195,7 +195,11 @@ function showKritikSaran() {
   }).then((result) => {
     /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
-      Swal.fire('Terima Kasih!', '', 'success')
+      Swal.mixin({
+        customClass: {
+          confirmButton: 'sweetalert-orange-btn'
+        },
+      }).fire('Terima Kasih!', '', 'success')
     }
   })
 }
