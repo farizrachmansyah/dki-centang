@@ -181,6 +181,25 @@ function showChatOption(number) {
   showMaintenence();
 }
 
+function showKritikSaran() {
+  Swal.mixin({
+    customClass: {
+      confirmButton: 'sweetalert-orange-btn'
+    },
+    confirmButtonText: 'Send &rarr;',
+    showCancelButton: true,
+    title: 'Kritik & Saran',
+  }).fire({
+    input: 'textarea',
+    inputPlaceholder: 'Tanggapan anda..',
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      Swal.fire('Terima Kasih!', '', 'success')
+    }
+  })
+}
+
 function showMaintenence() {
   const showPopUp = Swal.mixin({
     customClass: {
