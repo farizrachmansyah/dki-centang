@@ -129,10 +129,10 @@ class EventListener {
                 <div class="hubungi">
                   <p class="hubungi__text">Bagaimana anda ingin menghubungi petugas kami?</p>
                   <div class="hubungi__btn">
-                    <button class="hubungi-btn call" data-telpon=${theFuncBtn.dataset.telpon}>
+                    <button onclick="showCallOption(this.dataset.telpon)" class="hubungi-btn" data-telpon=${theFuncBtn.dataset.telpon}>
                       <i class="fas fa-phone-alt"></i>
                     </button>
-                    <button class="hubungi-btn chat" data-telpon=${theFuncBtn.dataset.telpon}>
+                    <button onclick="showChatOption(this.dataset.telpon)" class="hubungi-btn" data-telpon=${theFuncBtn.dataset.telpon}>
                       <i class="fas fa-comments"></i>
                     </button>
                   </div>
@@ -147,6 +147,7 @@ class EventListener {
   }
 }
 
+// MAIN LOGIC
 document.addEventListener('DOMContentLoaded', () => {
   const events = new EventListener();
 
@@ -155,18 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
   events.hubungiButton();
 })
 
-document.addEventListener('click', (e) => {
-  if (e.target.classList.contains('call')) {
-    const hubungiCallBtn = e.target;
-    showCallOption(hubungiCallBtn);
-  } else if (e.target.classList.contains('chat')) {
-    const hubungiChatBtn = e.target;
-    showChatOption(hubungiChatBtn);
-
-  }
-});
-
-function showCallOption(target) {
+// FUNCTIONAL METHOD
+function showCallOption(number) {
   Swal.fire({
     icon: 'question',
     title: 'Telpon melalui..',
@@ -174,7 +165,7 @@ function showCallOption(target) {
         <div class="telpon">
           <div class="telpon__btn">
             <button class="telpon-btn provider">
-              <a href="tel:${target.dataset.telpon}">TELPON MELALUI PROVIDER</a>
+              <a href="tel:${number}">TELPON MELALUI PROVIDER</a>
             </button>
             <button class="telpon-btn wa">
               <div onclick="showMaintenence()">TELPON MELALUI WhatsApp</div>
@@ -186,7 +177,7 @@ function showCallOption(target) {
   })
 }
 
-function showChatOption(target) {
+function showChatOption(number) {
   showMaintenence();
 }
 
